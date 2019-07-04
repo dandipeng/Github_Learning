@@ -17,6 +17,7 @@ Online Markdown Editor [Dillinger](https://dillinger.io/).
 Code or Text into **its own distinct block**, use triple backticks.
 
 Some basic Git commands are:
+
 \`\`\`
 
 git status
@@ -54,8 +55,8 @@ This site was built using \[GitHub Pages\]\(https://pages.github.com/).
 1. First list item
 
    \- First nested list item
-   
-     \- Second nested list item
+
+      \- Second nested list item
 
 **Task lists**: preface list items with a regular space character followed by [ ]. To mark a task as complete, use [x].
 
