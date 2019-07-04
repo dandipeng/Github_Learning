@@ -58,6 +58,6 @@ If a task list item description begins with a parenthesis, you'll need to escape
 - [ ] \(Optional) Open a followup issue
 
 
-**Images**: start with ![text](link)
+**Images**: start with ![text
 
-![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![Sunset in Lake Tahoe](images/sunset_1.jpeg)
