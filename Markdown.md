@@ -18,9 +18,13 @@ Code or Text into **its own distinct block**, use triple backticks.
 
 Some basic Git commands are:
 \`\`\`
+
 git status
+
 git add
+
 git commit
+
 \`\`\`
 
 **Links**: shortcut: command + k
@@ -41,12 +45,16 @@ This site was built using \[GitHub Pages\]\(https://pages.github.com/).
 **Unordered lists**: preceding one or more lines of text with - or *
 
 \- George Washington
+
 \- John Adams
+
 \- Thomas Jefferson
 
 **Nested lists**:
 1. First list item
+
    \- First nested list item
+   
      \- Second nested list item
 
 **Task lists**: preface list items with a regular space character followed by [ ]. To mark a task as complete, use [x].
