@@ -10,7 +10,7 @@ Online Markdown Editor [Dillinger](https://dillinger.io/).
 
 **Strikethrough**: surround it with double tildes \~\~This was mistaken text\~\~ ~~This was mistaken text~~
 
-**Text quote**: start with a right angle bracket > Pardon my French
+**Text quote**: start with a right angle bracket >. Pardon my French
 
 **Code**: surround text in backticks \`code\`   `code`
 
@@ -65,7 +65,7 @@ This site was built using [GitHub Pages](https://pages.github.com/).
 
 **Nested lists**:
 
-1. First list item
+\1. First list item
 
    \- First nested list item
 
