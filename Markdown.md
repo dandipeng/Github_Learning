@@ -1,6 +1,6 @@
 The Contents are based on [GitHub Flavored Markdown Spec](https://github.github.com/gfm/).
 
-Heads: # ## ### ... ###### (h1 to h6)
+**Heads**: # ## ### ... ###### (h1 to h6)
 
 **Bold**: surround it with double asterisks or double underscores **bold**      shortcut: command + b
 
@@ -58,5 +58,6 @@ If a task list item description begins with a parenthesis, you'll need to escape
 - [ ] \(Optional) Open a followup issue
 
 
-2. Links and images
-3. Large blocks of code
+**Images**: start with ![text](link)
+
+![Alt text](relative/path/to/img.jpg?raw=true "Title")
