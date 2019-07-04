@@ -4,31 +4,31 @@ Online Markdown Editor [Dillinger](https://dillinger.io/).
 
 **Heads**: # ## ### ... ###### (h1 to h6)
 
-**Bold**: surround it with double asterisks or double underscores **bold**      shortcut: command + b
+**Bold**: surround it with double asterisks or double underscores \*\*bold\*\*      shortcut: command + b
 
-**Italics**: surround it with underscores _Italics_     shortcut: command + i
+**Italics**: surround it with underscores \_Italics\_     shortcut: command + i
 
-**Strikethrough**: surround it with double tildes ~~This was mistaken text~~
+**Strikethrough**: surround it with double tildes \~\~This was mistaken text\~\~
 
 **Text quote**: start with a right angle bracket > Pardon my French
 
-**Code**: surround text in backticks `code`
+**Code**: surround text in backticks \`code\`
 
 Code or Text into **its own distinct block**, use triple backticks.
 
 Some basic Git commands are:
-```
+\`\`\`
 git status
 git add
 git commit
-```
+\`\`\`
 
 **Links**: shortcut: command + k
 Inline link by wrapping link text in brackets [ ], and then wrapping the URL in parentheses ( )
-This site was built using \[GitHub Pages\]\(https://pages.github.com/\).
+This site was built using \[GitHub Pages\]\(https://pages.github.com/).
 
 **Relative Links**:
-[Contribution guidelines for this project](docs/CONTRIBUTING.md)
+\[Contribution guidelines for this project\]\(docs/CONTRIBUTING.md)
 
 
 
@@ -40,14 +40,14 @@ This site was built using \[GitHub Pages\]\(https://pages.github.com/\).
 
 **Unordered lists**: preceding one or more lines of text with - or *
 
-- George Washington
-- John Adams
-- Thomas Jefferson
+\- George Washington
+\- John Adams
+\- Thomas Jefferson
 
 **Nested lists**:
 1. First list item
-   - First nested list item
-     - Second nested list item
+   \- First nested list item
+     \- Second nested list item
 
 **Task lists**: preface list items with a regular space character followed by [ ]. To mark a task as complete, use [x].
 
@@ -62,4 +62,4 @@ If a task list item description begins with a parenthesis, you'll need to escape
 
 **Images**: start with ![text
 
-![Sunset in Lake Tahoe](images/sunset_1.jpeg)
+\![Sunset in Lake Tahoe\]\(images/sunset_1.jpeg)
