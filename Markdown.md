@@ -1,6 +1,6 @@
 The Contents are based on [GitHub Flavored Markdown Spec](https://github.github.com/gfm/).
 
-Online Markdown Editor [dillinger](https://dillinger.io/).
+Online Markdown Editor [Dillinger](https://dillinger.io/).
 
 **Heads**: # ## ### ... ###### (h1 to h6)
 
@@ -25,7 +25,7 @@ git commit
 
 **Links**: shortcut: command + k
 Inline link by wrapping link text in brackets [ ], and then wrapping the URL in parentheses ( )
-This site was built using [GitHub Pages](https://pages.github.com/).
+This site was built using \[GitHub Pages\]\(https://pages.github.com/\).
 
 **Relative Links**:
 [Contribution guidelines for this project](docs/CONTRIBUTING.md)
