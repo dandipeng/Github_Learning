@@ -65,7 +65,7 @@ This site was built using [GitHub Pages](https://pages.github.com/).
 
 **Nested lists**:
 
-\1. First list item
+1. First list item
 
    \- First nested list item
 

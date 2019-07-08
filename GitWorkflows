@@ -1,0 +1,181 @@
+# https://dotfiles.github.io/
+
+git init
+
+git clone url reset_name(optional)
+
+git status # To figure out what's going on with a repository
+
+git log # see the history, check what you are
+# Navigating The Log
+# to scroll down, press
+# j or ↓ to move down one line at a time
+# d to move by half the page screen
+# f to move by a whole page screen
+
+# to scroll up, press
+# k or ↑ to move _up_ one line at a time
+# u to move by half the page screen
+# b to move by a whole page screen
+# press q to quit out of the log (returns to the regular command prompt)
+git log --oneline # change showing format
+
+git log --stat #display the files that have been changed in the commit, as well as the number of lines that have been added or deleted.
+
+git log -p # used to display the actual changes made to a file, -p means -path
+
+git log -p --stat # will display the stats info above the patch info.
+
+git log -p -w # will show the patch information, but will not highlight lines where only whitespace changes have occurred.
+
+git log -p fdf5493 # start at that commit
+
+git log --decorate
+
+git show fdf5493 # show only one commit
+
+git add file_name1 (file_name2) # move file_name1 (and file_name2) from the Working Directory to the Staging Index (staging)
+git add . # (move all)
+git rm --cached # Moving a file from the Staging Index back to the Working Directory (unstage)
+
+git commit # Moving a file from the Staging Index to Resposity
+# TIP: If the commit message you're writing is short and you don't want to wait for your code editor to open up to type it out,
+# you can pass your message directly on the command line with the -m flag:
+git commit -m "Initial commit"
+
+# Udacity commit comment style: https://udacity.github.io/git-styleguide/
+
+
+git diff # used to see changes that have been made but haven't been committed
+
+git diff SHA_1 SHA_2 # Show the difference between two SHA codes
+
+
+# create .gitignore in shell
+touch .gitignore # make sure at the same directory that the hidden .git directory is located.
+
+git tag -a v1.0 # add a tag as a reference, where a as this tag is an annotated tag (always have -a)
+
+git tag -d v1.0 # delete tag v1.0 (short version)
+git tag --delete v1.0 # delete tag v1.0
+
+git tag -a v1.0 a87984 # add tag to a historical commit with SHA "a87984"
+
+git branch # list all branch names in the repository, the one with an asterisk is the active branch
+git branch created_branch_name # create a branch at current active HEAD
+git branch alt-sidebar-loc 42a69f # create a branch alt-sidebar-loc and have it point to the commit with SHA 42a69f
+
+git checkout branch_name # switch to the branch_name
+
+git branch -d sidebar # delete the branch sidebar. Note: you can't delete a branch that you're currently on
+# also you cannot delete a branch if  it has commits on it that aren't on any other branch
+# (meaning the commits are unique to the branch that's about to be deleted).
+git branch -D sidebar # forcely delete the branch sidebar
+
+git checkout -b footer master # create our new footer branch and have this footer branch start at the same location as the master branch
+
+git log --oneline --decorate --graph --all # see all branches at once
+
+
+git merge <name-of-branch-to-merge-in>
+# A Fast-forward merge will just move the currently checked out branch forward
+# until it points to the same commit that the other branch is pointing to.
+
+
+git reset --hard HEAD^ # undo the last wrong merge
+# Note: ^ character is a known as a "Relative Commit Reference" and indicates "the parent commit"
+
+git commit --amend # change the most recent commit comments
+# Also, if you just found out there are something you forgot to change at your most recent commit and
+# you wanna do it and merge it with the last one, just edit the file, save the file, git add, then run
+# git commit --amend
+
+git revert <SHA-of-commit-to-revert> # undo the commit referred to its SHA (in fact it is a new commit, not like git reset, which erases commit)
+
+
+# ------- Relative Commit References
+# ^ – indicates the parent commit
+# ~ – indicates the first parent commit
+# partent commit of the current commit
+HEAD^
+HEAD~
+HEAD~1
+# grandpartent commit of the current commit
+HEAD^^
+HEAD~2
+# great-grandpartent commit of the current commit
+HEAD^^^
+HEAD~3
+# Merge commit: ~ and ^ are different
+# ^ reference is used to indicate the first parent of the commit
+# while ^2 indicates the second parent.
+# The first parent is the branch you were on when you ran git merge
+# while the second parent is the branch that was merged in.
+HEAD^^^2 # is the grandparent's (HEAD^^) second parent (^2))
+
+
+# before run git reset, usually create a backup branch as:
+git branch backup
+# then run git reset
+git reset <reference-to-commit>
+git reset HEAD^
+git reset --mixed HEAD^ # (default set) will take the changes made in the most current commit and move them to the working directory.
+# if wanna go back to the most recent commit:
+# 1. remove the uncommitted changes from the working directory
+git checkout -- index.html
+# 2. merge backup into master (which will cause a Fast-forward merge and move master up to the same point as backup)
+git merge backup
+
+git reset --soft HEAD^ # take the changes made in the most current commit and move them directly to the Staging Index.
+
+git reset --hard HEAD^ # take the changes made in the most current commit and erases them.
+
+
+
+git remote add origin https://github.com/dandipeng/SQL.git
+https://github.com/dandipeng/R_Project.git
+git push -u <origin: remote name> <master: local branch name>
+# git push -u : Creates an upstream tracking connection and is especially useful when publishing a local branch on a remote for the first time.
+# git push --all : Pushes all local branches.
+# git push --delete : Deletes the specified remote branch
+# git push --tags : Pushes all local tags
+
+# to cancel the remote commit/push
+git rebase -i HEAD # go to the most recent commit
+git rebase -i HEAD~ # go to the one before last one
+git rebase -i HEAD~3 # 3 steps back
+
+
+git add -p file1 # splitting an exist commit (usually when the commit is big)
+
+git checkout -b hard_branch(a branch name) # create a branch named hard_branch
+
+git checkout master # switch back to the HEAD
+git branch master # switch back to the HEAD
+git merge # merge everything in that branch
+git cherrypick # only merge some steps in that branch
+
+# in case when you what applied the first 100 steps except the last two
+# git rewind 2 steps
+# but to save the last 2 steps, you can create a temp branch, then rewind it
+# then apply to the thing you want to merge, then delete the temp
+git checkout -b temp # when you are at the HEAD (last step) of the branch you want to copy
+
+# lay through your teeth
+
+get rebase #change the start point of a branch
+# usually it's easy to be conflicted
+
+git merge --abort # to cancel the merge
+
+
+git pull # before git push
+git fetch
+
+git remote -v ?
+git log --oneline ?
+open -a gitx
+
+git reflog
+
+git rebase -i (reorder something) # allows us to change all things
