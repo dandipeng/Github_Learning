@@ -1,10 +1,51 @@
 # https://dotfiles.github.io/
 
+# Contents from Book <Pro Git>
+
+# Initializing a Repository in an Existing Directory
+# cd to the directory
 git init
 
+# Cloning an Existing Repository
 git clone url reset_name(optional)
+# clone would include all commits, while 'git copy' just copy the latest version
 
+
+# Checking the Status of Your Files
 git status # To figure out what's going on with a repository
+
+# Checking short Status
+git status -s
+
+# Ignoring Files
+# Create .gitignore in shell
+touch .gitignore # make sure at the same directory that the hidden .git directory is located.
+
+# In the .gitignore file
+#   An asterisk * matches zero or more characters
+#   [abc] matches any character inside the brackets (in this case a, b, or c)
+#   A question mark (?) matches a single character
+#   Brackets enclosing characters separated by a hyphen ([0-9]) matches any character between them (in this case 0 through 9).
+#   !!! You can also use two asterisks to match nested directories; a/**/z would match a/z, a/b/z, a/b/c/z
+
+# Examples in .gitignore file
+#   *.[oa]
+#   *~
+# ignore all .a files:
+# *.a
+# but do track lib.a, even though you're ignoring .a files above:
+# !lib.a
+# only ignore the TODO file in the current directory, not subdir/TODO:
+# /TODO
+# ignore all files in any directory named build:
+# build/
+# ignore doc/notes.txt, but not doc/server/arch.txt:
+# doc/*.txt
+# ignore all .pdf files in the doc/ directory and any of its subdirectories:
+# doc/**/*.pdf
+
+git diff # used to see changes that have been made but haven't been committed/you’ve changed but not yet staged
+
 
 git log # see the history, check what you are
 # Navigating The Log
@@ -34,10 +75,12 @@ git log --decorate
 
 git show fdf5493 # show only one commit
 
+# First step: from the Working Directory to the Staging Index
 git add file_name1 (file_name2) # move file_name1 (and file_name2) from the Working Directory to the Staging Index (staging)
 git add . # (move all)
 git rm --cached # Moving a file from the Staging Index back to the Working Directory (unstage)
 
+# Second step: from the Staging Index to Resposity
 git commit # Moving a file from the Staging Index to Resposity
 # TIP: If the commit message you're writing is short and you don't want to wait for your code editor to open up to type it out,
 # you can pass your message directly on the command line with the -m flag:
@@ -49,10 +92,6 @@ git commit -m "Initial commit"
 git diff # used to see changes that have been made but haven't been committed
 
 git diff SHA_1 SHA_2 # Show the difference between two SHA codes
-
-
-# create .gitignore in shell
-touch .gitignore # make sure at the same directory that the hidden .git directory is located.
 
 git tag -a v1.0 # add a tag as a reference, where a as this tag is an annotated tag (always have -a)
 
