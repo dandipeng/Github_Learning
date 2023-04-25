@@ -1,0 +1,6 @@
+$ diff file1.py file2.py
+## 5c6 (c stands for change)
+## 5a6,7 (a stands for add. Line 5 in file1 is deleted while Line6 and 7 in file2 are added.)
+
+$ diff -u file1.py file2.py ## give the context before/after the changed codes
+

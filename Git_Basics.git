@@ -218,3 +218,33 @@ open -a gitx
 git reflog
 
 git rebase -i (reorder something) # allows us to change all things
+
+## create a new branch and push it
+git checkout -b <branch_name>
+git push -u origin <branch_name>
+
+### -------- Remove a (pushed) commit
+### Let's say 61234 is the sha-number of the last good commit you want to keep.
+git reset --hard 61234
+git push -f
+### the above will remove completely all wrong commits without any trace.
+### Note: If you wanted to push (the commit you reset to) to a specific branch you'd use git push -f origin branch-name instead.
+
+
+
+## undo local changes
+## a. to overwrite local changes
+git checkout -- <file>
+## b. To save local changes so you can re-use them later:
+git stash ## save this branch's changes (when you want to record the current state of the working directory and the index, but want to go back to a clean working directory)
+git checkout <branchname> ## go to another branch
+git checkout <this branchname> ## come back to this branch to resume changes
+git stash apply ## restore
+## b.1 Undo staged local changes
+
+## b.2 Turn a stash into a branch if you feel it's important enough:
+git stash branch <branchname> [<stash>]
+## [<stash>] to give the specific stach you wanna apply, if no stack it uses the latest one by default
+### To know more about git stash: https://stackoverflow.com/questions/20409853/git-stash-and-apply
+
+
