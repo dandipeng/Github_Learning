@@ -4,3 +4,12 @@ $ diff file1.py file2.py
 
 $ diff -u file1.py file2.py ## give the context before/after the changed codes
 
+### How to apply changes (Recommended way)
+## firstly, generate a diff file to only show the different parts codes
+$ diff -u old_file new_file > change_filename.diff
+
+## then, read the diff file to go through the changes
+$ cat change_filename.diff
+
+## then, after going throught the change file, decide to apply it using patch or don't apply it
+$ patch old_file.py < change_filename.diff
