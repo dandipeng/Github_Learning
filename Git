@@ -1,0 +1,14 @@
+pwd # what directory I'm currently working in
+ls # list all files in current directory
+ls -a # list all files including hidden ones in current directory
+ls -l
+mkdir git_workshop # create a folder named "git_workshop"
+cd git_workshop # change the directory to "git_workshop"
+
+
+
+# clone specific branch
+# [] : put customized name in the bracket and ignore the [] icon
+git clone - b [branch name] [clone address you get from GitHub]
+
+
