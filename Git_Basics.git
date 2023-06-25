@@ -10,6 +10,8 @@ git init
 git clone url reset_name(optional)
 # clone would include all commits, while 'git copy' just copy the latest version
 
+# Cloning specific branch
+git clone -b branch_name url
 
 # Checking the Status of Your Files
 git status # To figure out what's going on with a repository
@@ -78,7 +80,8 @@ git show fdf5493 # show only one commit
 # First step: from the Working Directory to the Staging Index
 git add file_name1 (file_name2) # move file_name1 (and file_name2) from the Working Directory to the Staging Index (staging)
 git add . # (move all)
-git rm --cached # Moving a file from the Staging Index back to the Working Directory (unstage)
+git reset # undo git add .
+git rm --cached CS/ECS145/ecs145 final project/ECS145_Term # undo one part of git add . --> Moving a file from the Staging Index back to the Working Directory (unstage)
 
 # Second step: from the Staging Index to Resposity
 git commit # Moving a file from the Staging Index to Resposity
@@ -246,5 +249,3 @@ git stash apply ## restore
 git stash branch <branchname> [<stash>]
 ## [<stash>] to give the specific stach you wanna apply, if no stack it uses the latest one by default
 ### To know more about git stash: https://stackoverflow.com/questions/20409853/git-stash-and-apply
-
-
