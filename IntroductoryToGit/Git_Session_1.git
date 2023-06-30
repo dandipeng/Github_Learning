@@ -11,5 +11,5 @@ $ diff -u old_file new_file > change_filename.diff
 ## then, read the diff file to go through the changes
 $ cat change_filename.diff
 
-## then, after going throught the change file, decide to apply it using patch or don't apply it
+## then, after going through the change file, decide to apply it using patch or don't apply it
 $ patch old_file.py < change_filename.diff
