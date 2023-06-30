@@ -249,3 +249,13 @@ git stash apply ## restore
 git stash branch <branchname> [<stash>]
 ## [<stash>] to give the specific stach you wanna apply, if no stack it uses the latest one by default
 ### To know more about git stash: https://stackoverflow.com/questions/20409853/git-stash-and-apply
+
+
+
+## Sometimes switch over different branches, but you need to keep one specific file unchanged & unpushed
+git update-index --assume-unchanged omnichannel/ocp_config.json ## omnichannel/ocp_config.json is the example file location
+### undo this change
+git update-index --no-assume-unchanged <file>
+### To get a list of dir's/files that are assume-unchanged run this in a unix shell:
+git ls-files -v | grep '^h'
+
