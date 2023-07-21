@@ -259,3 +259,9 @@ git update-index --no-assume-unchanged <file>
 ### To get a list of dir's/files that are assume-unchanged run this in a unix shell:
 git ls-files -v | grep '^h'
 
+## when develop something at the wrong branch and wanna move them to another one
+git stash ## stash these changes
+git checkout <branch name> ## the actual branch you wanna develop on
+git stash apply ## apply these changes to the current branch
+git stash drop ## drop the stash
+
