@@ -6,7 +6,8 @@ $ git remote show origin
 $ git branch -r ## read remote branches
 
 ### difference between fetch and pull
-### git fetch fetches remote updates but doesn't merge (to review the remote changes); git pull fetches remote updates and merges.
+### git fetch fetches remote updates but doesn't merge (to review the remote changes);
+### git pull fetches remote updates and merges.
 
 $ git fetch
 ### use some commands to check history
@@ -25,4 +26,15 @@ $ git rebase master
 ### 2. when both you and your colleague are developing on the same branch
 $ git fetch
 $ git rebase origin/branch_name
+
+
+### when showing some branch and 'origin/master' have diverged
+### while still wanna save the changed files
+$ git branch temp
+$ git fetch origin
+$ git reset --hard origin/master
+### if wanna push the temp branch
+$ git checkout temp
+$ git push --set-upstream origin temp
+
 
