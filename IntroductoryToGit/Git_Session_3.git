@@ -1,0 +1,28 @@
+### Working remotely
+### check remote info
+$ git remote -v
+$ git remote show origin
+
+$ git branch -r ## read remote branches
+
+### difference between fetch and pull
+### git fetch fetches remote updates but doesn't merge (to review the remote changes); git pull fetches remote updates and merges.
+
+$ git fetch
+### use some commands to check history
+$ git log origin/master [or other branch names]
+$ git status
+## if satisfied with the remote changes, merge them
+$ git merge origin/master [or other branch names]
+### git fetch + git merge [branch name] = git pull
+
+
+### git rebase to avoid 3-way merge, make it fast-forward merge
+### 1. when the branch has a few commits behind master branch
+$ git checkout refactor
+$ git rebase master
+
+### 2. when both you and your colleague are developing on the same branch
+$ git fetch
+$ git rebase origin/branch_name
+
