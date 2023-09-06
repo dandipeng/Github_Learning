@@ -1,0 +1,52 @@
+## shortcut to commit all **small** changes to existed files in one step
+$ git commit -a -m "commit comment"
+
+## Git uses the HEAD alias to represent the currently checked-out snapshot of your project
+
+## identifier p stands for patch
+$ git log -p
+$ git show [commit HASH code]
+$ git log --stat ## check the latest few commits (what files are changed by how many add/delete)
+
+
+### check local **unstaged** changes
+$ git diff [specific filename if needed]
+
+$ git add -p ## add local changes to staging mode with patch info
+## after run git add, git diff won't show any changes cuz the changes are staged
+
+### remove files
+$ git rm [file name]
+
+### rename files
+$ git mv [file name] [new file name]
+
+### undo unstaged changes
+$ git checkout  [file_name]
+
+### undo staged changes (have run git add)
+$ git reset HEAD [file_name]
+
+### undo commited changes (have run git commit), LOCAL COMMITS ONLY
+### <run the needed commands "e.g. git add" first then run the below>
+$ git commit --amend
+
+### a bad commit to rollback/completely revert (in fact it's another commit)
+$ git revert HEAD
+### if wanna revert to a specific commit
+# git revert [commit HASH code]
+
+### create a new branch and switch to it
+$ git checkout -b [branch name]
+
+### merge a branch to master
+$ git checkout master  # switch to main/master
+$ git merge [branch name]
+### if run into a conflict
+$ git status  ## find conflict files and look into it
+### after successfully merged, check the process
+$ git log --graph --oneline
+
+### throw away the merge
+$ git merge --abort
+
