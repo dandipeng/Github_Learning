@@ -227,11 +227,18 @@ git checkout -b <branch_name>
 git push -u origin <branch_name>
 
 ### -------- Remove a (pushed) commit
+### Method 1
 ### Let's say 61234 is the sha-number of the last good commit you want to keep.
 git reset --hard 61234
 git push -f
 ### the above will remove completely all wrong commits without any trace.
 ### Note: If you wanted to push (the commit you reset to) to a specific branch you'd use git push -f origin branch-name instead.
+
+### Method 2
+git revert HEAD~2
+### or
+git revert --no-commit 0d1d7fc3..HEAD   ### 0d1d7fc3.. is the specific commit you want to revert
+git commit
 
 
 
@@ -265,3 +272,8 @@ git checkout <branch name> ## the actual branch you wanna develop on
 git stash apply ## apply these changes to the current branch
 git stash drop ## drop the stash
 
+## check differences between branch with file names only
+git diff main --name-status
+
+## keep the branch up to master/main
+git merge master
